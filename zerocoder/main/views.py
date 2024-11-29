@@ -1,13 +1,13 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 def index(request):
-    return HttpResponse("<h1>Это мой первый проект на Django<h1>")
+    return render(request, 'main/index.html')
 
 def new(request):
-    return HttpResponse("<h1>Это вторая страница моего проекта на Django<h1>")
+    return render(request, 'main/new.html')
 
-def data(request):
-    return HttpResponse("<h1>Это страница Data<h1>")  # Контент для /data
+def third(request):
+    return render(request, 'main/third.html')
 
-def test(request):
-    return HttpResponse("<h1>Это страница Test<h1>")  # Контент для /test
+def fourth(request):
+    return render(request, 'main/fourth.html')

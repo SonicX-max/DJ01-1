@@ -1,0 +1,37 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}OilDjango{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    {% include 'main/nav.html' %}
+    <aside class="text-center my-4">
+        <img src="{% static 'main/img/ресурсы.png' %}" alt="Добыча нефти" width="300px">
+        <h2>OilDjango</h2>
+    </aside>
+    <main class="container my-4">
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer class="bg-light text-center text-lg-start mt-auto py-3">
+        <div class="text-center">
+            © 2024 OilDjango: Все права защищены
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
